@@ -1,0 +1,103 @@
+/* ─── Estrutura de tela ──────────────────────────────────── */
+
+.screen {
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+  background-color: var(--bg);
+  position: relative;
+}
+
+/* Área de conteúdo rolável — cresce entre header e nav */
+.screen-body {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 24px 20px;
+  /* Espaço para a nav inferior não cobrir conteúdo */
+  padding-bottom: calc(72px + 24px);
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Telas sem nav inferior (onboarding, etc.) */
+.screen-body.no-nav {
+  padding-bottom: 24px;
+}
+
+/* ─── Header de tela ─────────────────────────────────────── */
+
+.screen-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border-soft);
+  background-color: var(--bg);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.screen-header h2 {
+  flex: 1;
+}
+
+/* ─── Nav inferior ───────────────────────────────────────── */
+
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 430px;
+  height: 64px;
+  background-color: var(--bg-raised);
+  border-top: 1px solid var(--border);
+  display: flex;
+  align-items: stretch;
+  z-index: 100;
+}
+
+.nav-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: var(--text-muted);
+  font-size: 0.7rem;
+  font-family: inherit;
+  padding: 8px 4px;
+  transition: color var(--transition);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.nav-item.active {
+  color: var(--accent-text);
+}
+
+.nav-item svg {
+  width: 22px;
+  height: 22px;
+  stroke-width: 1.75;
+}
+
+/* ─── Utilitários de espaçamento ─────────────────────────── */
+
+.stack { display: flex; flex-direction: column; }
+.stack-xs { gap: 6px;  }
+.stack-sm { gap: 12px; }
+.stack-md { gap: 20px; }
+.stack-lg { gap: 32px; }
+
+.row { display: flex; align-items: center; }
+.row-between { display: flex; align-items: center; justify-content: space-between; }
+
+.mt-sm { margin-top: 12px; }
+.mt-md { margin-top: 20px; }
+.mt-lg { margin-top: 32px; }

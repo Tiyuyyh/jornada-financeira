@@ -1,0 +1,93 @@
+/* ─── Tokens de cor ──────────────────────────────────────── */
+/*
+  Paleta: cinza grafite escuro como base
+  Acento: verde musgo apagado — cor de dinheiro sem ser clichê
+  Alerta: âmbar para atenção, vermelho para urgência
+*/
+
+:root {
+  /* Superfícies */
+  --bg:          #1a1c1e;
+  --bg-raised:   #22252a;
+  --bg-inset:    #14161a;
+  --border:      #2e3238;
+  --border-soft: #252830;
+
+  /* Texto */
+  --text-primary:   #e8eaed;
+  --text-secondary: #9aa0ab;
+  --text-muted:     #5c6370;
+
+  /* Acento — verde musgo */
+  --accent:         #5c8a6a;
+  --accent-dim:     #3d5c47;
+  --accent-text:    #8bbf9a;
+
+  /* Semânticas */
+  --positive:       #4a7c5e;
+  --positive-text:  #7dbf98;
+  --warning:        #8a6a2e;
+  --warning-text:   #d4a94a;
+  --danger:         #7c3a3a;
+  --danger-text:    #c97a7a;
+  --danger-bg:      #3d1f1f;
+
+  /* Raio */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+
+  /* Sombra */
+  --shadow-sm: 0 1px 3px rgba(0,0,0,.35);
+  --shadow-md: 0 4px 12px rgba(0,0,0,.45);
+
+  /* Transições */
+  --transition: 150ms ease;
+}
+
+/* ─── Tema claro ─────────────────────────────────────────── */
+
+[data-theme="light"] {
+  --bg:          #f0f2f4;
+  --bg-raised:   #ffffff;
+  --bg-inset:    #e4e7ea;
+  --border:      #d0d4da;
+  --border-soft: #e0e3e8;
+
+  --text-primary:   #1a1c1e;
+  --text-secondary: #4a5260;
+  --text-muted:     #8a9199;
+
+  --accent:         #3d6b4f;
+  --accent-dim:     #d0e8d8;
+  --accent-text:    #2d5040;
+
+  --positive:       #d0e8d8;
+  --positive-text:  #235a35;
+  --warning:        #f5e8c8;
+  --warning-text:   #7a5500;
+  --danger:         #f5d8d8;
+  --danger-text:    #8a2020;
+  --danger-bg:      #fdf0f0;
+
+  --shadow-sm: 0 1px 3px rgba(0,0,0,.08);
+  --shadow-md: 0 4px 12px rgba(0,0,0,.12);
+}
+
+/* ─── Aplica aos elementos ───────────────────────────────── */
+
+body {
+  background-color: var(--bg);
+  color: var(--text-primary);
+}
+
+/* Faixa lateral no desktop — deixa claro que é app mobile */
+@media (min-width: 431px) {
+  body {
+    background-color: #111214;
+  }
+  #app-shell {
+    box-shadow: var(--shadow-md);
+  }
+}
