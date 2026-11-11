@@ -1,0 +1,94 @@
+/* ─── Onboarding ─────────────────────────────────────────── */
+
+/* Indicador de progresso */
+.onboarding-progress {
+  display: flex;
+  gap: 8px;
+  padding: 8px 0 4px;
+}
+
+.progress-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--border);
+  transition: background-color var(--transition), transform var(--transition);
+}
+
+.progress-dot.active {
+  background-color: var(--accent);
+  transform: scale(1.25);
+}
+
+.progress-dot.done {
+  background-color: var(--accent-dim);
+}
+
+/* Botão de mostrar/esconder senha */
+.btn-toggle-pass {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  padding: 4px;
+  transition: color var(--transition);
+}
+
+.btn-toggle-pass:hover { color: var(--text-secondary); }
+
+/* Barra de força da senha */
+.strength-bar {
+  height: 3px;
+  background-color: var(--border);
+  border-radius: 100px;
+  overflow: hidden;
+  margin-top: 4px;
+}
+
+.strength-fill {
+  height: 100%;
+  border-radius: 100px;
+  width: 0%;
+  transition: width 300ms ease, background-color 300ms ease;
+}
+
+.strength-fill[data-level="fraca"] { background-color: var(--danger-text); }
+.strength-fill[data-level="media"] { background-color: var(--warning-text); }
+.strength-fill[data-level="forte"] { background-color: var(--positive-text); }
+
+/* Grupo de opções (tema, tamanho) */
+.option-group {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.option-btn {
+  flex: 1;
+  min-width: 80px;
+  padding: 12px 8px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  background-color: var(--bg-raised);
+  color: var(--text-secondary);
+  font-family: inherit;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: border-color var(--transition), color var(--transition), background-color var(--transition);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.option-btn.active {
+  border-color: var(--accent);
+  color: var(--accent-text);
+  background-color: var(--accent-dim);
+}
+
+.option-btn:active { opacity: 0.7; }
