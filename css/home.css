@@ -1,0 +1,103 @@
+/* ─── Tela principal ─────────────────────────────────────── */
+
+/* Botão ícone no header */
+.btn-icon {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+  border-radius: var(--radius-sm);
+  transition: color var(--transition);
+  -webkit-tap-highlight-color: transparent;
+}
+.btn-icon:active { color: var(--text-primary); }
+
+/* Card principal — meta diária */
+.home-main-card {
+  background: linear-gradient(145deg, var(--bg-raised), var(--bg-inset));
+}
+
+.home-daily-goal {
+  font-size: 2rem;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  color: var(--text-primary);
+  margin-top: 4px;
+  font-family: 'DM Mono', monospace;
+}
+
+.home-balance {
+  font-size: 1.1rem;
+  font-weight: 600;
+  font-family: 'DM Mono', monospace;
+  letter-spacing: -0.02em;
+  margin-top: 2px;
+}
+
+/* Card de obrigação urgente */
+.card-urgent {
+  border-left: 3px solid var(--danger-text);
+  background-color: var(--danger-bg);
+}
+
+.card-soon {
+  border-left: 3px solid var(--warning-text);
+}
+
+/* Estado vazio */
+.home-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 40px 20px;
+  gap: 10px;
+}
+
+.home-empty-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: var(--radius-lg);
+  background-color: var(--bg-raised);
+  border: 1px solid var(--border-soft);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+
+/* Módulos de acesso rápido */
+.home-modules {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.module-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 20px 12px;
+  background-color: var(--bg-raised);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-lg);
+  color: var(--text-secondary);
+  font-family: inherit;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: border-color var(--transition), color var(--transition);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.module-card:active {
+  border-color: var(--accent);
+  color: var(--accent-text);
+}
