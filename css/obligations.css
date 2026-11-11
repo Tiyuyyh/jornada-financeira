@@ -1,0 +1,43 @@
+/* ─── Obrigações ─────────────────────────────────────────── */
+
+.ob-card { transition: border-color var(--transition); }
+
+.ob-card-actions {
+  display: flex;
+  gap: 4px;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid var(--border-soft);
+}
+
+.ob-daily-preview {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--bg-inset);
+  border-radius: var(--radius-md);
+  padding: 12px 16px;
+}
+
+/* Overlay de formulário / confirmação */
+.form-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0,0,0,.55);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  z-index: 200;
+  padding: 0;
+}
+
+.form-sheet {
+  background-color: var(--bg-raised);
+  border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+  padding: 24px 20px 36px;
+  width: 100%;
+  max-width: 430px;
+  max-height: 92dvh;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
