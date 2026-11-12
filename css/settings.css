@@ -48,3 +48,12 @@
 .toggle-btn.on .toggle-thumb {
   transform: translateX(18px);
 }
+
+/* ─── Exportação ─────────────────────────────────────────── */
+
+.export-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--text-secondary);
+}
