@@ -111,6 +111,6 @@ const Finance = (() => {
     return labels[period] || '';
   }
 
-  return { dailyCost, totalDailyGoal, daysUntilDue, sortByUrgency, todayIncome, fmt, periodLabel };
+  return { dailyCost, totalDailyGoal, totalDailyGoalAll, daysUntilDue, sortByUrgency, todayIncome, fmt, periodLabel };
 
 })();

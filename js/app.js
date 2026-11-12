@@ -62,13 +62,7 @@ const App = (() => {
     `;
   }
 
-  // Inicializa quando o DOM estiver pronto
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', init);
-  } else {
-    init();
-  }
-
-  return { register, navigate };
+  // init() é chamado manualmente pelo último script do index.html
+  return { register, navigate, init };
 
 })();

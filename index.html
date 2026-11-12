@@ -17,10 +17,11 @@
   <link rel="stylesheet" href="css/obligations.css">
   <link rel="stylesheet" href="css/cards.css">
   <link rel="stylesheet" href="css/settings.css">
+  <link rel="stylesheet" href="css/income.css">
 </head>
+<body>
 <!-- SheetJS para geração de XLSX no browser -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
-<body>
 
   <!-- Shell do app — conteúdo injetado por JS -->
   <div id="app-shell">
@@ -43,5 +44,7 @@
   <script src="js/screens/add-income.js"></script>
   <script src="js/screens/history.js"></script>
   <script src="js/screens/export.js"></script>
+  <!-- Inicializa o app após todos os screens estarem registrados -->
+  <script>App.init();</script>
 </body>
 </html>
