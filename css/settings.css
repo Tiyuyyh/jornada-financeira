@@ -1,0 +1,50 @@
+/* ─── Configurações ──────────────────────────────────────── */
+
+.settings-section-title {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding-left: 4px;
+}
+
+.settings-text-preview {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  padding: 10px 0 2px;
+  transition: font-size 200ms ease;
+}
+
+/* Toggle switch */
+.toggle-btn {
+  flex-shrink: 0;
+  width: 44px;
+  height: 26px;
+  border-radius: 100px;
+  background-color: var(--border);
+  border: none;
+  cursor: pointer;
+  padding: 3px;
+  transition: background-color var(--transition);
+  -webkit-tap-highlight-color: transparent;
+  position: relative;
+}
+
+.toggle-btn.on {
+  background-color: var(--accent);
+}
+
+.toggle-thumb {
+  display: block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #fff;
+  box-shadow: 0 1px 3px rgba(0,0,0,.3);
+  transition: transform var(--transition);
+}
+
+.toggle-btn.on .toggle-thumb {
+  transform: translateX(18px);
+}
