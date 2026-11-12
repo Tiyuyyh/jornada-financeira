@@ -28,11 +28,6 @@ App.register('home', () => {
   const obligations = Storage.get('obligations', []);
   const incomes     = Storage.get('incomes', []);
 
-  // Calcula meta diária total
-  function calcDailyGoal() {
-    return obligations.reduce((sum, ob) => sum + (ob.dailyCost || 0), 0);
-  }
-
   // Saldo de hoje (entradas registradas hoje)
   function todayBalance() {
     const today = new Date().toDateString();
@@ -59,7 +54,7 @@ App.register('home', () => {
     return val.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
   }
 
-  const dailyGoal = calcDailyGoal();
+  const dailyGoal = Finance.totalDailyGoalAll(obligations, Storage.get('credit_cards', []));
   const balance   = todayBalance();
   const urgent    = mostUrgent();
   const hasData   = obligations.length > 0;
@@ -155,7 +150,7 @@ App.register('home', () => {
           </svg>
           <span>Cartões</span>
         </button>
-        <button class="module-card" data-nav="history">
+        <button class="module-card" data-nav="history" id="btn-history">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" width="22" height="22" stroke-width="1.75">
             <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
           </svg>

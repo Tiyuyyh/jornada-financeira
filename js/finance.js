@@ -34,6 +34,19 @@ const Finance = (() => {
   }
 
   /**
+   * Meta diária total incluindo faturas de cartão.
+   * Fatura do cartão ÷ 30 = custo diário do cartão.
+   */
+  function totalDailyGoalAll(obligations, cards) {
+    const obTotal = totalDailyGoal(obligations);
+    const cardTotal = (cards || []).reduce((sum, c) => {
+      const invoice = parseFloat(c.currentInvoice) || 0;
+      return sum + (invoice > 0 ? invoice / 30 : 0);
+    }, 0);
+    return obTotal + cardTotal;
+  }
+
+  /**
    * Dias até o vencimento de uma obrigação.
    * Retorna null se não tiver dueDate.
    */
